@@ -20,6 +20,15 @@
   flex-direction: column;
 }
 
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title h1 {
+  margin: 10px 50px;
+}
+
 .footer {
   display: flex;
   height: 125px;
@@ -44,6 +53,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.cartButton {
+  background-color: grey;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 10px 50px;
+  font-weight: bold;
 }
 
 .disabled {
@@ -82,5 +100,9 @@
 
 .descTitle {
   font-weight: bold;
+  line-height: 30px;
   letter-spacing: 10px;
+}
+.floatRight {
+  float: right;
 }

@@ -19,6 +19,7 @@ function App() {
   ];
   const [cart, addRemoveCart] = useState([]);
   const [itemData, editItemContent] = useState(contents);
+  const [showStatus, toggleDisplay] = useState(false);
 
   function editCart(product, id) {
     let newCart = [...cart];
@@ -61,12 +62,15 @@ function App() {
     <div className="App">
       <div className="title">
         <h1>Products</h1>
+        <p className="cartButton" onClick={() => toggleDisplay(!showStatus)}>
+          cart {cart.length}
+        </p>
       </div>
       <div className="description">
         <h2 className="descTitle">Shop in style</h2>
         <p className="descTitle">With this shop hompeage template</p>
       </div>
-      <div className={cart.length !== 0 ? "cart" : "displayNone"}>
+      <div className={showStatus ? "cart" : "displayNone"}>
         {/* <hr /> */}
         <h2 className="cartTitle">
           cart<span className="count">{cart.length}</span>
