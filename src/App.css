@@ -2,37 +2,85 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.itemList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.itemCards {
+  height: 400px;
+  width: 250px;
+  border: 1px solid black;
+  margin: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardContent {
   display: flex;
   flex-direction: column;
+}
+
+.footer {
+  display: flex;
+  height: 125px;
+  width: 250px;
+  flex-direction: column-reverse;
   align-items: center;
+}
+
+.button {
+  width: 70%;
+}
+
+.enabled {
+  color: red;
+}
+
+.cartTitle {
+  text-align: left;
+  margin: 20px;
+}
+.cartCards {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.disabled {
+  color: black;
+}
+
+.cartLists {
+  margin: 10px;
+  background-color: grey;
+  border-radius: 10px;
+  border: 0px;
+  padding: 2px;
+  color: white;
+  width: 200px;
+  text-align: center;
+}
+
+.displayNone {
+  color: red;
+  display: none;
+}
+
+.count {
+  margin-left: 20px;
+  border-radius: 20px;
+  border: 0px;
+  padding: 0px 10px;
+  background-color: grey;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.description {
+  background-color: rgb(9, 13, 24);
+  color: white;
+  padding: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.descTitle {
+  font-weight: bold;
+  letter-spacing: 10px;
 }
