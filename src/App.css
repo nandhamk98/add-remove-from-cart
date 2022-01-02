@@ -41,6 +41,10 @@
   width: 70%;
 }
 
+.button:hover {
+  background-color: black;
+}
+
 .enabled {
   color: red;
 }
@@ -56,12 +60,16 @@
 }
 
 .cartButton {
-  background-color: grey;
+  background-color: black;
   color: white;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   margin: 10px 50px;
   font-weight: bold;
+}
+
+.cartButton:hover {
+  background-color: grey;
 }
 
 .disabled {
