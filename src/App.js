@@ -1,7 +1,10 @@
 import "./App.css";
 import { useState } from "react";
+import { ItemCards } from "./ItemCards";
+import { CartList } from "./CartList";
 
 function App() {
+  // data
   const contents = [
     {
       product: "Fancy Product",
@@ -17,10 +20,13 @@ function App() {
     { product: "Special Item", price: "$20.00", isAdded: false, id: 7 },
     { product: "Popular Item", price: "$18.00", isAdded: false, id: 8 },
   ];
+
+  // Defining states
   const [cart, addRemoveCart] = useState([]);
   const [itemData, editItemContent] = useState(contents);
   const [showStatus, toggleDisplay] = useState(false);
 
+  // Editing cart based on adding remving items
   function editCart(product, id) {
     let newCart = [...cart];
     let flag = true;
@@ -35,7 +41,6 @@ function App() {
     if (flag) {
       newCart.push({ product, id });
     }
-    // console.log(newCart);
     return newCart;
   }
 
@@ -49,6 +54,7 @@ function App() {
     return dict;
   }
 
+  // Adding to cart list
   function addtoList(product, id) {
     console.log(product);
     let newCart = editCart(product, id);
@@ -97,50 +103,6 @@ function App() {
           />
         ))}
       </div>
-    </div>
-  );
-}
-
-function ItemCards({ product, price, addtoListfunc, isAdded, id }) {
-  return (
-    <div className="itemCards">
-      <img
-        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDw8PDw8PDw0PDw8PDw8PDQ8PDQ8PFRUWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQYC/8QAFhABAQEAAAAAAAAAAAAAAAAAAAER/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDTgqkoAAAAAAACiACoAoIAKACAAKCAAAAAAC4AgAAAAAAEAAAVFBAAVBQQUBBQEAAAAAAABRAAAAAAAAAFQAVFQBUUASKAIoAAIKgAAAAAAGgAAAAAAAAAAAKgCiAKAAAAgAAAAAAAAAAAAAAAAAAAAoICgiooAigAAgAAKCAoIAAAAAAAACggqAAACoCiKCKAAAAAIKgAAAAAqAAoIAAogCgCAAAAAAKgAKAigAACKgAAAAAACgAYACKAAgAKAIqAqKAGCAqKgAAAAAACgAACKACKgAAKACCoAoAAAAAAAgKCAAAAAoAigAAAAgoCaKAgKAioAoAAAAACAKgAAAAAAAKIAoAiooIogAuAIAAACgAiooAFAEAAAAAAAAACCgIKCAAAoAYAioAoAAAAAAigiooAIAqAAKCAAAoCCgioAoAIKAgACoAqCggqAoAIKAIqAAAAAqAABAVAAABRAFABAAAABUoCoACgIKAIoCAAAAAAAAAAAAAACgIoAgAAAKgAqgDlQAqAAAAUAVAAUAQoAqUAAAUAH//Z"
-        alt="450 x 300"
-        width="250"
-        height="150"
-      />
-      <div className="cardContent">
-        <div className="contents">
-          <h2 className="productName">{product}</h2>
-          <p>{price}</p>
-        </div>
-        <div className="footer">
-          <input
-            type="button"
-            className={!isAdded ? "button disabled" : "button enabled"}
-            value={!isAdded ? "Add to cart" : "Remove from cart"}
-            onClick={(event) => {
-              addtoListfunc(product, id);
-              // changeState(!isAdded);
-            }}
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function CartList({ product, addtoListfunc, id }) {
-  return (
-    <div className="cartLists">
-      <p
-        onClick={() => {
-          addtoListfunc(product, id);
-        }}
-      >
-        {product}
-      </p>
     </div>
   );
 }
